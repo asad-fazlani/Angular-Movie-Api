@@ -17,6 +17,8 @@ query :any
 
   changedata(data) {  
   this.data = JSON.stringify(data.mname);  
+  // this.data = "Avengers"  
+
   }
 
   GetData() {

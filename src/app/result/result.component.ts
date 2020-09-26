@@ -10,15 +10,23 @@ import { RestService } from '../rest.service';
 export class ResultComponent implements OnInit {
 
   constructor(private http: RestService) { }
-  data: any
+  data: any = []
+  results :any=[]
   ngOnInit(): void {
+
+   
     this.http.GetData().subscribe(
       query => {
         this.data = query
-        console.log(this.data);
-
+        // console.log(this.data.results);
+        this.submit();
       });
-    console.log(this.data);
+      
+    }
+
+    submit(){
+      this.results = this.data.results
+        console.log(this.results);
+    }
   }
 
-}
